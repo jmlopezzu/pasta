@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Pasta Love</title>
+    <!-- CDN Bootstrap -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <!-- Estilos personalizados -->
+    <style>
+        body {
+            background-color: #f7f7f7;
+            text-align: center;
+            padding-top: 50px;
+        }
+
+        .container {
+            max-width: 500px;
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .question {
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+
+        .btn {
+            margin: 10px;
+            transition: all 0.3s ease;
+        }
+
+        .btn-scale {
+            transform: scale(1);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <p class="question">¿Quieres almorzar conmigo?</p>
+        <button id="btnYes" class="btn btn-success btn-scale">Sí</button>
+        <button id="btnNo" class="btn btn-danger">No</button>
+    </div>
+    <img src="oso.jpeg" alt="oso" style="width: 100%;">
+
+    <!-- Scripts personalizados -->
+    <script>
+        const btnYes = document.getElementById("btnYes");
+        const btnNo = document.getElementById("btnNo");
+
+        // Variable para controlar la escala del botón verde
+        let scale = 1;
+
+        btnNo.onclick = function() {
+            scale += 0.5; // Incrementar la escala
+            btnYes.style.transform = `scale(${scale})`; // Aplicar la nueva escala al botón verde
+        };
+
+        btnYes.onclick = function() {
+            alert("Perfecto, paso por ti a Confa a las 12 PM al lado del cine."); // Mensaje de alerta
+        };
+    </script>
+</body>
+</html>
